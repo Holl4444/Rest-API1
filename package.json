@@ -1,0 +1,19 @@
+{
+  "name": "week-4-rest-api-hackathon-jhs-room-12",
+  "version": "1.0.0",
+  "description": "Restful API of 500 Greatest Albums",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/SchoolOfCode/week-4-rest-api-hackathon-jhs-room-12.git"
+  },
+  "author": "Sarah Joe Holly",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SchoolOfCode/week-4-rest-api-hackathon-jhs-room-12/issues"
+  },
+  "homepage": "https://github.com/SchoolOfCode/week-4-rest-api-hackathon-jhs-room-12#readme"
+}
