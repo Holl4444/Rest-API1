@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "description": "Restful API of 500 Greatest Albums",
   "main": "index.js",
+  "type": "module",
   "scripts": {
+    "start": "node index.js",
+    "dev": "node --watch index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -15,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/SchoolOfCode/week-4-rest-api-hackathon-jhs-room-12/issues"
   },
-  "homepage": "https://github.com/SchoolOfCode/week-4-rest-api-hackathon-jhs-room-12#readme"
+  "homepage": "https://github.com/SchoolOfCode/week-4-rest-api-hackathon-jhs-room-12#readme",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
 }
