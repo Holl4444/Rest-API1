@@ -37,10 +37,10 @@ app.post('/albums', async function (req, res) {
   // Get the info from the client, destructured to keep it readable.
   const { album, artist, year, genre, subgenre } = req.body;
   //Check we have minimum input and if not cancel request.
-//   if (!(album || artist)) {
-//     res.status(400).send('Minimum input Album and Artist');
-//     return;
-//   }
+  //   if (!(album || artist)) {
+  //     res.status(400).send('Minimum input Album and Artist');
+  //     return;
+  //   }
   //Add the new album
   const userAlbum = await addAlbum(
     album,
