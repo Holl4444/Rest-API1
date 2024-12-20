@@ -2,7 +2,12 @@ import express from 'express';
 const app = express();
 const PORT = 3000;
 
-import { getAlbums, getAlbumByRank, addAlbum } from './helpers.js';
+import {
+  getAlbums,
+  getAlbumByRank,
+  addAlbum,
+  editSubgenre,
+} from './helpers.js';
 
 app.use(express.json());
 
@@ -35,21 +40,30 @@ app.get('/albums/:rank', async function (req, res) {
 
 app.post('/albums', async function (req, res) {
   // Get the info from the client, destructured to keep it readable.
-  const { album, artist, year, genre, subgenre } = req.body;
-  //Check we have minimum input and if not cancel request.
-  //   if (!(album || artist)) {
-  //     res.status(400).send('Minimum input Album and Artist');
-  //     return;
-  //   }
+  const { Album, Artist, Year, Genre, Subgenre } = req.body;
+  // Check we have minimum input and if not cancel request.
+  // if (!(album || artist)) {
+  //   res.status(400).send('Minimum input Album and Artist');
+  //   return;
+  // }
   //Add the new album
   const userAlbum = await addAlbum(
-    album,
-    artist,
-    year,
-    genre,
-    subgenre
+    Album,
+    Artist,
+    Year,
+    Genre,
+    Subgenre
   );
   res.status(201).json(userAlbum);
+});
+
+app.patch('/albums/:rank', async function (req, res) {
+  const { Subgenre } = req.body;
+  const rank = parseInt(req.params.rank);
+
+  const editedSubgenre = await editSubgenre(rank, `${Subgenre}`);
+
+  res.status(200).json(editedSubgenre);
 });
 
 app.listen(PORT, function () {

@@ -90,3 +90,19 @@ export async function addAlbum(
   //finally return just the info we added.
   return userAlbum;
 }
+
+export async function editSubgenre(number, newSubgenre) {
+  //Read albums
+  const albums = await readAlbums();
+  //Find album
+  const album = albums[number - 1];
+  //IF
+  // if we have an argument at newSubgenre add that as "Subgenre" value
+  // else keep old value
+
+  album.Subgenre = newSubgenre ?? album.Subgenre;
+  //Save updated
+  await writeAlbums(albums);
+  //Tell client what they changed /confirm
+  return album;
+}
