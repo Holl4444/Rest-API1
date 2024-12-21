@@ -62,20 +62,20 @@ export async function getNextRank() {
 // }
 
 export async function addAlbum(
-  album,
-  artist,
-  year = '',
-  genre = '',
-  subgenre = ''
+  Album,
+  Artist,
+  Year = '',
+  Genre = '',
+  Subgenre = ''
 ) {
   //Create a new album object
   const userAlbum = {
     Number: null,
-    year,
-    album,
-    artist,
-    genre,
-    subgenre,
+    Year,
+    Album,
+    Artist,
+    Genre,
+    Subgenre,
   };
   // read the albums
   const albums = await readAlbums();
